@@ -1,0 +1,17 @@
+packages:
+  darwin:
+    brews:
+      - ansiweather
+      - awscli
+      - btop
+      - eza
+      - fzf
+      - git
+      - k9s
+      - kubernetes-cli
+      - magic-wormhole.rs
+      - ncdu
+      - rage
+      - rbw
+    casks:
+      - font-ubuntu-mono-nerd-font

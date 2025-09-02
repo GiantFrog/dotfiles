@@ -1,0 +1,20 @@
+encryption = "age"
+progress = true
+
+[age]
+    command = "rage"
+    identity = "~/.config/age.key"
+    recipient = "age1kfz8u3zgj2u99d8xh64652l5uyq4jhrme6g4psu299ey67hccses8t8el6"
+
+[bitwarden]
+    unlock = "auto"
+
+[edit]
+    apply = true
+    command = "nano"
+
+[git]
+    autoAdd = true
+
+[hooks.read-source-state.pre]
+    command = ".local/share/chezmoi/.install_password_manager.sh"
