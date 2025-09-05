@@ -1,3 +1,4 @@
+alias bye='exit'
 alias ls='ls -G'
 alias ll='eza -lh --git --no-user'
 alias la='eza -lah@ --git --icons'
