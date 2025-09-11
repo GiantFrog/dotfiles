@@ -1,3 +1,5 @@
+fish_add_path $HOME/.rd/bin
+
 if [ -f $HOME/.config/fish/alias.fish ]
     source $HOME/.config/fish/alias.fish
 end
