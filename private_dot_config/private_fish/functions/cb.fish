@@ -54,12 +54,15 @@ function cb
                 exit 1
         end
     end
-    if stdin_is_pipelike    # copy if piped to and paste if piped from.
+    if stdin_is_pipelike    # copy if piped to; immediately paste if also piped from.
         set -f our_function $(string join '' $os _copy)
-        $our_function
+        cat | string collect | $our_function
         enable_teelike_chaining $argv[1]
-    else                    # paste if none of the above.
+    else                    # paste if not piped to.
         set -f our_function $(string join '' $os _paste)
         $our_function
+        if not stdout_is_pipelike
+            echo
+        end
     end
 end
