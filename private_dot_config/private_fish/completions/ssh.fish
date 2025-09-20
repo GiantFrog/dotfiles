@@ -1,1 +1,1 @@
-complete -c ssh -a '(_teleport_hosts)'
+complete -c ssh --no-files -ra '(_teleport_hosts)'
