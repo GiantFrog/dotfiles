@@ -13,7 +13,7 @@ function _teleport_clusters
             # use the old cache file
             cat $cache_file
             # if it's time, update the hosts cache in a non-blocking way
-            if test (date +%s) -gt (math (date -r $cache_file +%s) + 60 x 60 x $cache_minutes)
+            if test (date +%s) -gt (math (date -r $cache_file +%s) + 60 x $cache_minutes)
                 # we want to use ifne to prevent clobbering the cache in the event tsh returns nothing
                 nohup sh -c "string match --all -r '^\S+' (tsh kube ls -q --format=text) 2>/dev/null | ifne tee $cache_file >/dev/null" >/dev/null 2>&1 &
             end
