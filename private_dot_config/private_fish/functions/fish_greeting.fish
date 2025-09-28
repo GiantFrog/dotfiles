@@ -1,4 +1,7 @@
 function fish_greeting
+    hyfetch --args="-c $HOME/.config/fastfetch/tiny.jsonc"
+    echo
+
     set -f weather_cache_hours 0.5
     set -f cache_file ~/.cache/weather.txt
 
@@ -19,4 +22,5 @@ function fish_greeting
     # we re-format the columns every time, even if cached, so it can react to the current terminal width.
     echo $weather[1]
     printf "    %s\n" $weather[2..-1] | column
+    echo
 end

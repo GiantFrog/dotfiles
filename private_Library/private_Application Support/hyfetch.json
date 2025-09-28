@@ -1,0 +1,14 @@
+{
+    "preset": "finsexual",
+    "mode": "8bit",
+    "auto_detect_light_dark": true,
+    "light_dark": "light",
+    "lightness": 1,
+    "color_align": {
+        "mode": "horizontal"
+    },
+    "backend": "fastfetch",
+    "args": null,
+    "distro": "mac_small",
+    "pride_month_disable": false
+}
