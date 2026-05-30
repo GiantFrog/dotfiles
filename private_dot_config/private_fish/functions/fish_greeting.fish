@@ -1,4 +1,5 @@
 function fish_greeting
+    set -f default_location Seattle,WA
     hyfetch --args="-c $HOME/.config/fastfetch/tiny.jsonc"
     echo
 
@@ -14,7 +15,12 @@ function fish_greeting
         if command -q CoreLocationCLI
             set -f city (CoreLocationCLI --format %locality,%isoCountryCode)
         else
-            set -f city Seattle,WA
+            set -f city $default_location
+        end
+        # CoreLocationCLI doesn't write errors to stderr, but it does include this little emoji when something goes wrong.
+        if string match -rq '.*❌.*' $city
+            echo $city 1>&2
+            set -f city $default_location
         end
         set -f weather (ansiweather -l $city -u imperial -a false -s true -h false -H true -d true | tee $cache_file | string split ' - ')
     end
